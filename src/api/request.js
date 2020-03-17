@@ -3,10 +3,10 @@ import qs from 'qs'
 
 switch (process.env.NODE_ENV) {
   case 'production':
-    axios.defaults.baseURL = 'http://127.0.0.1:3000'
+    axios.defaults.baseURL = 'http://localhost:3000'
     break
   case 'test':
-    axios.defaults.baseURL = 'http://127.0.0.1:3000'
+    axios.defaults.baseURL = 'http://localhost:3000'
     break
   default:
     axios.defaults.baseURL = '/api'
