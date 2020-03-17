@@ -26,6 +26,7 @@ editModel.updateOne({
 // 获取组件列表
 editRouter.post('/getList', (req, res) => {
     editModel.find().then(data => {
+        console.log(data)
         res.send(data)
     }).catch(error => {
         res.status(500).send(error)
