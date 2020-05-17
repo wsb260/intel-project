@@ -5,7 +5,13 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/list">List</router-link> |
       <router-link to="/edit">edit</router-link> |
-      <router-link to="/view">view</router-link>
+      <router-link to="/view">view</router-link> |
+      <router-link to="/d3">d3</router-link> |
+      <router-link to='/g6'>g6</router-link> | 
+      <router-link to='/flow-chart'>流程图</router-link> |
+      <router-link to='/trend'>算法分析</router-link> |
+      <router-link to='/ava'>AVA</router-link> |
+      <router-link to='/test1'>test1</router-link>
     </div>
     <router-view/>
   </div>
@@ -17,11 +23,22 @@ export default {
     return {
       name: 'molong'
     }
+  },
+  methods:{
+    add(){
+
+    }
+  },
+  mounted() {
   }
 }
 </script>
 <style lang="scss">
+html,body {
+  height:100%;
+}
 #app {
+  height:100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

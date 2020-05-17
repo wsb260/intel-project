@@ -37,6 +37,31 @@ const routes = [
     path: '/view',
     name: 'View',
     component: () => import('../views/view.vue')
+  },
+  {
+    path: '/d3',
+    name: 'D3',
+    component: () => import('../views/d3.vue')
+  }, {
+    path: '/g6',
+    name: 'g6',
+    component: () => import('../views/antv/g6.vue')
+  }, {
+    path: '/flow-chart',
+    name: 'flowChart',
+    component: () => import('../views/antv/flowChart.vue')
+  }, {
+    path: '/trend',
+    name: 'trend',
+    component: () => import('../views/HelloWorld.vue')
+  }, {
+    path: '/ava',
+    name: 'ava',
+    component: () => import('../views/antv/ava.vue')
+  }, {
+    path: '/test1',
+    name: 'test1',
+    component: () => import('../views/antv/test1.vue')
   }
 ]
 
