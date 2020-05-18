@@ -62,6 +62,10 @@ const routes = [
     path: '/test1',
     name: 'test1',
     component: () => import('../views/antv/test1.vue')
+  }, {
+    path:'/test2',
+    name: 'test2',
+    component: () => import('../views/antv/test2.vue')
   }
 ]
 

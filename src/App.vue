@@ -11,7 +11,8 @@
       <router-link to='/flow-chart'>流程图</router-link> |
       <router-link to='/trend'>算法分析</router-link> |
       <router-link to='/ava'>AVA</router-link> |
-      <router-link to='/test1'>test1</router-link>
+      <router-link to='/test1'>test1</router-link> |
+      <router-link to="/test2">test2</router-link> 
     </div>
     <router-view/>
   </div>
