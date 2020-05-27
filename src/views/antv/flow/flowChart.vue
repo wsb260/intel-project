@@ -3,15 +3,18 @@
     <div id="headPanel" class="header">
       Vue 生命周期图示
     </div>
-    <div id="itemPanel"></div>
-    <div id="canvasPanel"></div>
+    <div id="itemPanel">
+      <item-panel></item-panel>
+    </div>
+    <div id="canvasPanel" ref="canvasPanel"></div>
     <div id="configPanel"></div>
   </div>
 </template>
 
 <script>
 import G6 from "@antv/g6";
-import data from "./component/data.js";
+import data from "../component/data.js";
+import ItemPanel from './component/item-panel'
 
 export default {
   name: "flow-chart",
@@ -20,13 +23,16 @@ export default {
       graph: null
     };
   },
+  components:{
+    ItemPanel
+  },
   methods: {
     createGraphic() {
       this.graph = new G6.Graph({
         container: "canvasPanel",
-        width: window.innerWidth - 50,
-        height: window.innerHeight - 120,
-        fitView: true,
+        width: window.outerWidth - 50,
+        height: window.outerHeight - 120,
+        fitView: false,
         layout: {
           type: "dagre", // 流程图布局
           nodesep: 80, // 横向间距
@@ -97,13 +103,24 @@ export default {
         const edgeItem = e.item
         this.graph.setItemState(edgeItem,'click',true) // 设置当前边的click状态
       })
+
+      this.$refs.canvasPanel.addEventListener('dragover',e => {
+        e.preventDefault();
+      })
+      this.$refs.canvasPanel.addEventListener('drop',e => {
+       console.log(e);
+       
+       e.preventDefault()
+       let nodeType = e.dataTransfer.getData('shape')
+       this.addNode(e,nodeType)
+      })
     },
-    addNode(e) {
+    addNode(e,type) {
       const model = {
         text: "node",
-        type: e.target.dataset.shape,
-        x: e.clientX + this.canvasOffset.x - 80,
-        y: e.clientY + this.canvasOffset.y - 40
+        type: type,
+        x: e.offsetX,
+        y: e.offsetY
       };
       this.graph.addItem("node", model);
     }

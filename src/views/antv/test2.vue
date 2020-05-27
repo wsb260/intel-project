@@ -23,7 +23,7 @@
                             <el-form-item label="横坐标">
                                 <el-input v-model="reactGround.x"></el-input>
                             </el-form-item>
-                            <el-form-item label="纵坐标"">
+                            <el-form-item label="纵坐标">
                             <el-input v-model=" reactGround.y">
                                 </el-input>
                             </el-form-item>

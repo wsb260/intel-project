@@ -49,7 +49,7 @@ const routes = [
   }, {
     path: '/flow-chart',
     name: 'flowChart',
-    component: () => import('../views/antv/flowChart.vue')
+    component: () => import('../views/antv/flow/flowChart.vue')
   }, {
     path: '/trend',
     name: 'trend',
